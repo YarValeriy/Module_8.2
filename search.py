@@ -5,12 +5,12 @@ import re
 from models import Author, Quote
 from redis_lru import RedisLRU
 
-uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
+# uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
 
 # Connect to MongoDB
 # mongoengine.connect("module8", host="mongodb://localhost:27017/module8") - не працює. Чому?
 # mongoengine.connect(db="module8", host="mongodb://localhost:27017", alias="default") - не працює. Чому?
-mongoengine.connect("module8", host=uri)
+# mongoengine.connect("module8", host=uri)
 
 # Connect to Redis
 

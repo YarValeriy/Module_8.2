@@ -10,6 +10,9 @@ from mongoengine import (
     CASCADE,
 )
 
+uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
+connect("module8", host= uri)
+# connect("module8", host="mongodb://localhost:27017") # НЕ ПРАЦЮЄ! ЧОМУ?
 
 class Author(Document):
     fullname = StringField(required=True, unique=True)
@@ -21,7 +24,7 @@ class Author(Document):
 
 class Quote(Document):
     author = ReferenceField(Author, reverse_delete_rule=CASCADE)
-    tags = ListField(StringField(max_length=15))
+    tags = ListField(StringField(max_length=40))
     quote = StringField()
     meta = {"collection": "quotes"}
 

@@ -2,7 +2,7 @@ import pika
 from mongoengine import connect
 from models import Contact
 
-uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
+# uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
 
 
 def send_email(contact_id):
@@ -18,11 +18,11 @@ def send_email(contact_id):
 
 
 def callback(ch, method, properties, body):
-    print("Received", body)
+    print("Received to send email", body.decode())
     send_email(body)
 
 # Connect to MongoDB
-connect("module8", host=uri)
+# connect("module8", host=uri)
 
 # Connect to RabbitMQ
 connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))

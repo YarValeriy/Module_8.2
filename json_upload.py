@@ -5,8 +5,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from mongoengine.errors import NotUniqueError
 
-
-uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
+# uri = "mongodb+srv://user_m8:567234@yarval.aryslwo.mongodb.net/?retryWrites=true&w=majority&appName=Yarval"
 
 
 def upload_authors(authors_file):
@@ -39,7 +38,7 @@ def upload_quotes(quotes_file):
 
 if __name__ == "__main__":
    
-    connect("module8", host= uri)
+    # connect("module8", host= uri)
     upload_authors("authors.json")
     print("authors.json uploaded")
     upload_quotes("qoutes.json")
